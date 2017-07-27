@@ -7,18 +7,42 @@ public class demo2 : MonoBehaviour {
 	private Animator animator;
 	// Use this for initialization
 	void Start () {
-		animator = GetComponent<Animator> ();
+		Debug.Log ("Start");
+		animator.SetBool("run",true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Debug.Log ("Update");
+		animator.SetBool("run",true);
 	}
 
+	void Awake(){
+		Debug.Log ("Awake");
+		animator = GetComponent<Animator> ();
+		animator.SetBool("run",true);
+	}
+
+	void FixedUpdate(){
+		Debug.Log ("FixedUpdate");
+		animator.SetBool("run",true);
+	}
+
+	void LateUpdate(){
+		Debug.Log ("LateUpdate");
+		animator.SetBool("run",true);
+	}
 	void OnGUI(){
-		if(GUILayout.Button("play")){
-			animator.SetBool("run",true);
-		}
+		Debug.Log ("Awake");
+		animator.SetBool("run",true);
+	}
+	void OnDisable(){
+		Debug.Log ("Awake");
+	}
+
+	void OnEnabled(){
+		Debug.Log ("OnEnabled");
+		animator.SetBool("run",true);
 	}
 
 }
