@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class demo2 : MonoBehaviour {
 
+	private Animator animator;
 	// Use this for initialization
 	void Start () {
-		Animator animator = GetComponent<Animator> ();
-		animator.speed = 1;
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+	void OnGUI(){
+		if(GUILayout.Button("play")){
+			animator.SetBool("run",true);
+		}
+	}
+
 }
